@@ -15,8 +15,8 @@ DB_URL = os.environ.get("mongodb+srv://Animebeasttamil:animebeast6374@cluster0.q
 DB_NAME = os.environ.get("Animebeasttamil", "madflixbotz")
 
 
-CHANNEL_ID = int(os.environ.get("-1002111172286", ""))
-FORCE_SUB_CHANNEL = int(os.environ.get("-1002075562432", "0"))
+CHANNEL_ID = int(os.environ.get("DB_CHANNEL_ID", "-1002111172286"))
+FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002075562432"))
 
 
 FILE_AUTO_DELETE = int(os.getenv("FILE_AUTO_DELETE", "600")) # auto delete in seconds
