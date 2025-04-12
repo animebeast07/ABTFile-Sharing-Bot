@@ -134,21 +134,14 @@ async def start_command(client: Client, message: Message):
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
     buttons = [
-        [
-            InlineKeyboardButton(text="Join Channel", url=client.invitelink),
-            InlineKeyboardButton(text="Join Channel", url=client.invitelink2),
-            InlineKeyboardButton(text="Join Channel", url=client.invitelink3)
-        ]
-    ]
-    try:
-        buttons.append(
-            [
-                InlineKeyboardButton(
-                    text = 'Try Again',
-                    url = f"https://t.me/{client.username}?start={message.command[1]}"
-                )
-            ]
-        )
+    [InlineKeyboardButton(text="Join Channel", url=client.invitelink)],
+    [InlineKeyboardButton(text="Join Channel", url=client.invitelink2)],
+    [InlineKeyboardButton(text="Join Channel", url=client.invitelink3)],
+    [InlineKeyboardButton(
+        text='Try Again',
+        url=f"https://t.me/{client.username}?start={message.command[1]}"
+    )]
+]
     except IndexError:
         pass
 
