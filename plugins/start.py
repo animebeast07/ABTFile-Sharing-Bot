@@ -125,8 +125,6 @@ async def start_command(client: Client, message: Message):
         )
         return
 
-    
-    
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
     buttons = [
@@ -145,7 +143,6 @@ async def not_joined(client: Client, message: Message):
                 )
             ]
         )
-
 
     except IndexError:
         pass
