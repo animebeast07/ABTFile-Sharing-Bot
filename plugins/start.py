@@ -5,7 +5,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 from pyrogram.errors import FloodWait, UserIsBlocked, InputUserDeactivated
 from bot import Bot
 from config import ADMINS, FORCE_MSG, START_MSG, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, PROTECT_CONTENT, FILE_AUTO_DELETE
-from helper_func import subscribed, encode, decode, get_messages
+from helper_func import *
 from database.database import add_user, del_user, full_userbase, present_user
 
 madflixofficials = FILE_AUTO_DELETE
@@ -16,7 +16,7 @@ file_auto_delete = humanize.naturaldelta(jishudeveloper)
 
 
 
-@Bot.on_message(filters.command('start') & filters.private & subscribed)
+@Bot.on_message(filters.command('start') & filters.private & subscribed1 & subscribed2 & subscribed3)
 async def start_command(client: Client, message: Message):
     id = message.from_user.id
     if not await present_user(id):
@@ -127,13 +127,15 @@ async def start_command(client: Client, message: Message):
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
-    buttons = [
-        [
-            InlineKeyboardButton(text="Join Channel",url = client.invitelink),
-            InlineKeyboardButton(text="Join Channel", url=client.invitelink2),
-            InlineKeyboardButton(text="Join Channel", url=client.invitelink3)
-        ]
-    ]
+    buttons = []
+    if client.invitelink is Not None and message.from_user.id not in ADMINS and Not await is_subscribed1(filter, client, message)
+        buttons.append([InlineKeyboardButton(text="Join Channel 1",url = client.invitelink)])
+    if client.invitelink2 is Not None and message.from_user.id not in ADMINS and Not await is_subscribed2(filter, client, message)
+        buttons.append([InlineKeyboardButton(text="Join Channel 2",url = client.invitelink2)])
+    if client.invitelink3 is Not None and message.from_user.id not in ADMINS and Not await is_subscribed3(filter, client, message)
+        buttons.append([InlineKeyboardButton(text="Join Channel 3",url = client.invitelink3)])
+            
+    
     try:
         buttons.append(
             [
