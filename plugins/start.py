@@ -128,11 +128,11 @@ async def start_command(client: Client, message: Message):
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
     buttons = []
-    if client.invitelink is Not None and message.from_user.id not in ADMINS and Not await is_subscribed1(filter, client, message):
+    if client.invitelink is not None and message.from_user.id not in ADMINS and not await is_subscribed1(filter, client, message):
         buttons.append([InlineKeyboardButton(text="Join Channel 1",url = client.invitelink)])
-    if client.invitelink2 is Not None and message.from_user.id not in ADMINS and Not await is_subscribed2(filter, client, message):
+    if client.invitelink2 is not None and message.from_user.id not in ADMINS and not await is_subscribed2(filter, client, message):
         buttons.append([InlineKeyboardButton(text="Join Channel 2",url = client.invitelink2)])
-    if client.invitelink3 is Not None and message.from_user.id not in ADMINS and Not await is_subscribed3(filter, client, message):
+    if client.invitelink3 is not None and message.from_user.id not in ADMINS and not await is_subscribed3(filter, client, message):
         buttons.append([InlineKeyboardButton(text="Join Channel 3",url = client.invitelink3)])
             
     
