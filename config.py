@@ -28,7 +28,8 @@ PORT = os.environ.get("PORT", "8020")
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
 
-
+START_PIC = os.environ.get("START_PIC","https://i.ibb.co/KcCkXZBj/x.jpg")
+START_MSG = os.environ.get("START_MESSAGE", "Hello {first}\n\nI can store private files of Anime beast tamil and other users can access it from special link.")
 try:
     ADMINS=[6848088376]
     for x in (os.environ.get("ADMINS", "6848088376").split()):
