@@ -1,4 +1,4 @@
-<img src="https://i.ibb.co/KcCkXZBj/x.jpg" alt="logo" target="/blank">
+<img src="https://ibb.co/2tr6wx6" alt="logo" target="/blank">
 
 <h1 align="center">
  <b><a href="https://t.me/Madflix_Bots" target="/blank"> File Sharing Bot </a></>
